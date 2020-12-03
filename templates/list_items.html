@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for item in items %}
+    <div class="card">
+        <div class="card-header">
+            <a href="{% url 'detail_item' %}">Detail</a>
+            <span class="font-weight-bold">{{item.title}}</span>
+            <span class="text-muted">Amount {{item.amount}} by {{item.owner}} |
+            {{item.date}} </span>
+            <span class="text-muted">Price {{item.price}} </span>
+
+        </div>
+        <div class="card-footer text-center text-muted">
+            <a href="{% url 'edit_item' item.pk %}">Edit</a> | <a href="{% url 'delete_item' item.pk %}">Delete</a>
+        </div>
+    </div>
+    <br/>
+    {% endfor %}
+{% endblock content %}

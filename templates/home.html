@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Django Store items</h1>
+        <a href="{% url 'signup' %}">Login</a>
+<!--        <p class="lead">Simple blog builded with Django</p>-->
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'list_items' %}" role="button">View All Items</a>
+        </p>
+    </div>
+
+{% endblock content%}
